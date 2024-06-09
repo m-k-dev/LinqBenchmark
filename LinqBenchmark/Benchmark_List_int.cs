@@ -4,7 +4,6 @@ using BenchmarkDotNet.Engines;
 using BenchmarkDotNet.Running;
 using StructLinq;
 using CTimers;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace LinqBenchmark
 {

@@ -1,10 +1,8 @@
-﻿using System.Runtime.CompilerServices;
-using BenchmarkDotNet.Attributes;
+﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Engines;
 using BenchmarkDotNet.Running;
 using StructLinq;
 using CTimers;
-using BenchmarkDotNet.Reports;
 
 namespace LinqBenchmark
 {
