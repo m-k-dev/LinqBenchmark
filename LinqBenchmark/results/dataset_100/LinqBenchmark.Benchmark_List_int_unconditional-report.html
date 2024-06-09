@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>LinqBenchmark.Benchmark_List_int_unconditional-20240609-171343</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.13.12, Windows 10 (10.0.19045.4239/22H2/2022Update) (VMware)
+Intel Core i7-2600K CPU 3.40GHz (Sandy Bridge), 1 CPU, 8 logical and 8 physical cores
+.NET SDK 8.0.300
+  [Host]     : .NET 8.0.5 (8.0.524.21615), X64 RyuJIT AVX
+  Job-LIKNPA : .NET 8.0.5 (8.0.524.21615), X64 RyuJIT AVX
+</code></pre>
+<pre><code>IterationCount=10  LaunchCount=1  RunStrategy=Throughput  
+WarmupCount=1  
+</code></pre>
+
+<table>
+<thead><tr><th>Method             </th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Rank</th><th>Gen0</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>Test_linq</td><td>22.22 ns</td><td>1.395 ns</td><td>0.923 ns</td><td>1.00</td><td>0.00</td><td>1</td><td>-</td><td>-</td><td>NA</td>
+</tr><tr><td>Test_linq_from</td><td>408.88 ns</td><td>41.358 ns</td><td>27.356 ns</td><td>18.41</td><td>1.15</td><td>7</td><td>0.0172</td><td>72 B</td><td>NA</td>
+</tr><tr><td>Test_structlinq</td><td>75.38 ns</td><td>6.392 ns</td><td>4.228 ns</td><td>3.40</td><td>0.24</td><td>3</td><td>0.0076</td><td>32 B</td><td>NA</td>
+</tr><tr><td>Test_structlinq_ZeroAlloc</td><td>63.79 ns</td><td>6.332 ns</td><td>4.189 ns</td><td>2.88</td><td>0.26</td><td>2</td><td>-</td><td>-</td><td>NA</td>
+</tr><tr><td>Test_for</td><td>89.80 ns</td><td>12.602 ns</td><td>7.499 ns</td><td>4.06</td><td>0.44</td><td>4</td><td>-</td><td>-</td><td>NA</td>
+</tr><tr><td>Test_foreach</td><td>102.13 ns</td><td>14.392 ns</td><td>8.564 ns</td><td>4.62</td><td>0.44</td><td>5</td><td>-</td><td>-</td><td>NA</td>
+</tr><tr><td>Test_IEnumerable</td><td>238.03 ns</td><td>39.782 ns</td><td>26.313 ns</td><td>10.76</td><td>1.51</td><td>6</td><td>0.0095</td><td>40 B</td><td>NA</td>
+</tr><tr><td>Test_IStructEnumerable</td><td>63.87 ns</td><td>9.312 ns</td><td>5.541 ns</td><td>2.89</td><td>0.32</td><td>2</td><td>-</td><td>-</td><td>NA</td>
+</tr></tbody></table>
+</body>
+</html>

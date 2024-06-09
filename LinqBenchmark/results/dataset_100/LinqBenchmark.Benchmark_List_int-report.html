@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>LinqBenchmark.Benchmark_List_int-20240609-171511</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.13.12, Windows 10 (10.0.19045.4239/22H2/2022Update) (VMware)
+Intel Core i7-2600K CPU 3.40GHz (Sandy Bridge), 1 CPU, 8 logical and 8 physical cores
+.NET SDK 8.0.300
+  [Host]     : .NET 8.0.5 (8.0.524.21615), X64 RyuJIT AVX
+  Job-LIKNPA : .NET 8.0.5 (8.0.524.21615), X64 RyuJIT AVX
+</code></pre>
+<pre><code>IterationCount=10  LaunchCount=1  RunStrategy=Throughput  
+WarmupCount=1  
+</code></pre>
+
+<table>
+<thead><tr><th>Method             </th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Rank</th><th>Gen0</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>Test_linq</td><td>321.09 ns</td><td>73.780 ns</td><td>48.801 ns</td><td>1.00</td><td>0.00</td><td>8</td><td>0.0095</td><td>40 B</td><td>1.00</td>
+</tr><tr><td>Test_linq_where</td><td>378.43 ns</td><td>75.542 ns</td><td>49.966 ns</td><td>1.21</td><td>0.27</td><td>9</td><td>0.0172</td><td>72 B</td><td>1.80</td>
+</tr><tr><td>Test_linq_from</td><td>332.09 ns</td><td>43.686 ns</td><td>25.997 ns</td><td>1.04</td><td>0.20</td><td>8</td><td>0.0172</td><td>72 B</td><td>1.80</td>
+</tr><tr><td>Test_structlinq</td><td>204.48 ns</td><td>23.267 ns</td><td>13.846 ns</td><td>0.64</td><td>0.11</td><td>5</td><td>0.0076</td><td>32 B</td><td>0.80</td>
+</tr><tr><td>Test_structlinq_ZeroAlloc</td><td>151.20 ns</td><td>10.274 ns</td><td>6.796 ns</td><td>0.48</td><td>0.07</td><td>4</td><td>-</td><td>-</td><td>0.00</td>
+</tr><tr><td>Test_structlinq_func</td><td>225.80 ns</td><td>35.009 ns</td><td>23.156 ns</td><td>0.72</td><td>0.11</td><td>6</td><td>0.0134</td><td>56 B</td><td>1.40</td>
+</tr><tr><td>Test_for</td><td>138.86 ns</td><td>22.568 ns</td><td>14.928 ns</td><td>0.44</td><td>0.05</td><td>3</td><td>-</td><td>-</td><td>0.00</td>
+</tr><tr><td>Test_foreach</td><td>124.12 ns</td><td>20.597 ns</td><td>13.624 ns</td><td>0.39</td><td>0.07</td><td>2</td><td>-</td><td>-</td><td>0.00</td>
+</tr><tr><td>Test_IEnumerable</td><td>270.33 ns</td><td>49.743 ns</td><td>29.601 ns</td><td>0.85</td><td>0.15</td><td>7</td><td>0.0095</td><td>40 B</td><td>1.00</td>
+</tr><tr><td>Test_IStructEnumerable</td><td>83.73 ns</td><td>4.803 ns</td><td>2.858 ns</td><td>0.26</td><td>0.04</td><td>1</td><td>-</td><td>-</td><td>0.00</td>
+</tr></tbody></table>
+</body>
+</html>
